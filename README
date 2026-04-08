@@ -1,55 +1,56 @@
 🧠 Dopamine Bro (Prefrontal Lab)
 
-    "Master your dopamine. Reclaim your focus. Become the best version of yourself."
+"Master your dopamine. Reclaim your focus. Become the best version of yourself."
 
-Dopamine Bro is your personal AI assistant for cognitive energy management. We’ve turned neuroscience into RPG mechanics, allowing you to see in real-time how your daily choices impact your brain's performance.
+Dopamine Bro is your personal AI assistant for managing cognitive energy. We’ve turned neuroscience into RPG mechanics, allowing you to see in real-time how your daily decisions impact your brain's performance.
 🚀 How It Works
 
 We track your internal resources using two key metrics:
 
-    Prefrontal Charge: Your reservoir of willpower, logic, and decision-making capacity. When this hits zero, focusing even on the simplest tasks becomes impossible.
+    Prefrontal Charge: Your reservoir of willpower, logic, and decision-making ability. When it hits zero, focusing on code becomes impossible.
 
-    Limbic Heat: The activity level of your "inner beast." This rises from endless scrolling, sugar, and information noise. The higher the heat, the harder it is to say "no" to bad habits.
+    Limbic Heat: The activity level of your "inner beast." It rises from endless scrolling, sugar, and information noise. The higher the "heat," the harder it is to say "no" to bad habits.
 
-🔥 Key Features
-1. Neural Garbage Collection (Sleep is the Base) 😴
+🛠 Developer Features (The Engineer’s Edge)
+⚡ Deep Work "ULTA" Mode
 
-In this app, sleep is your ultimate "magic pill."
+The "Ulta" (Ultimate) is your maximum productivity mode. It’s not just a timer—it’s a total system lockdown.
 
-    The Hard Reset: Only quality sleep fully clears your brain's cache.
+    Activation Cost: Requires Prefrontal Charge > 80%. You can't trigger your "Ulta" if you are cognitively depleted.
 
-    Morning Report: Get a briefing on how well your neurons "cleaned up" overnight. Find out if you're ready for deep work or if you should stay in power-saving mode.
+    System Lockdown: Automatic "whitelist" protocol.
 
-2. Dynamic UI (Your Brain on Screen) 📊
+        Desktop: Blocks all non-work domains (YouTube/Reddit/TG) via hosts file edits or browser extensions.
 
-Two interactive progress bars fluctuate based on your real-time actions:
+        Mobile: Enters "Nokia Mode"—only calls and IDE notifications are allowed.
 
-    Working out? Charge +20%.
+    Flow State Protection: Automatically sets your status to ⛔ In the Zone in Slack/Discord and silences all notifications.
 
-    Stuck in socials for an hour? Limbic Heat +40%.
+🔌 Automatic Integrations
 
-    Walking without your phone? Heat -15%.
+No manual entry. We pull data from where you actually work:
 
-3. Bro-Notifications (The Honest Voice in Your Pocket) 🗣️
+    WakaTime / VS Code API: We track your "Coding Heat." Coded in Python for 2 hours? Prefrontal Charge +25%.
 
-The app doesn't sugarcoat. It tells you the raw truth:
+    GitHub API: Merged a PR? Dopamine Streak +1.
 
-    "Bro, you've been staring at the screen for 30 minutes doing nothing. Your prefrontal cortex is fried. Go sleep or take a walk—you're just wasting time now."
+    Health Connect / Apple Health: Your sleep and steps are automatically converted into "charge" recovery.
 
-4. Smart Time-Boxing ⏳
+🦾 Modes & States
+Mode	Prefrontal Status	Limbic Heat	Restrictions
+Nokia (Emergency)	Low (Power Save)	High	Calls, SMS, and Gallery only.
+Blackberry (Work)	Balanced	Under Control	Slack, Email, Calendar, Music.
+ULTA (Dev God)	Maximum	Zero	IDE and Documentation only. Hard Lock.
+🧬 State Mathematics
 
-Automatic prompts suggesting when to take a break, meditate, or switch tasks based on your current "Charge" levels.
-5. Limbic Firewall (Smart Time Tracker) 🛑
+Our goal is to keep the balance in favor of reason, not impulses. The algorithm calculates your efficiency using the formula:
+Efficiency=LimbicHeatCodeCommitFrequency×PrefrontalCharge​
+🗣 Bro-Notifications (The Honest Voice in Your Pocket)
 
-Control your digital habits before they control you.
+The app won’t coddle you. It tells the raw truth:
 
-    Custom Quota: Set a limit (e.g., 30 minutes). Once time is up, the app sends a high-priority alert.
+    "Bro, you’ve been staring at the screen for 30 minutes and haven't done a thing. Your prefrontal cortex is fried. Go sleep or take a walk—right now, you’re just wasting time."
 
-    Real-time Damage: Notifications show exactly how much those 30 minutes drained your prefrontal percentage.
+📥 Why This Works
 
-    Smart Reminders: The app reminds you of the high-value tasks on your list that you're currently trading for "cheap dopamine."
-
-🧬 The Math of Your State
-
-Our goal is to keep the ratio in favor of your reason, not your impulses. The algorithm calculates your current efficiency using the following formula:
-Efficiency=LimbicHeatPrefrontalCharge​
+Unlike "sterile" habit trackers, Dopamine Bro gives developers what they understand: numbers, logs, and results. It turns the struggle against dopamine addiction into a system optimization task.​
