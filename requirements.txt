@@ -1,0 +1,2 @@
+pyperclip==1.9.0
+plyer==2.1.0
