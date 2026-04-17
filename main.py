@@ -17,11 +17,11 @@ def main(page: ft.Page):
         border_radius=20,
 
     )
-    page.vertical_alignment = ft.MainAxisAligment.START
-    page.horizontal_alignment = ft.CrossAxisAligment.END
+    page.vertical_alignment = ft.MainAxisAlignment.START
+    page.horizontal_alignment = ft.CrossAxisAlignment.END
 
     page.add(content)
     page.add()
+    page.update()
 
-
-ft.app(target=main)
+page.update()
