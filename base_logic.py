@@ -3,13 +3,20 @@ import re
 import random
 import time
 import threading
+import queue                     # <-- новый импорт
 from datetime import datetime
 from plyer import notification
+import joblib
+
+# Новые импорты
+from setfit import SetFitModel
+import pychrome
+import websocket
 
 try:
     import pyperclip
 except ImportError:
-    print("Ошибка: установите модуль pyperclip командой: pip install pyperclip")
+    print("Ошибка: установите pyperclip: pip install pyperclip")
     exit(1)
 
 
@@ -32,6 +39,10 @@ class SinapsterFlet:
             (r"tell me something positive about me", "Desperate validation"),
         ]
 
+        self.msg_queue = queue.Queue()
+        self.nlp_model = None
+        self.cdp_active = False
+
         self.bro_messages = [
             "Bro, you just asked: \"{text}...\"\nType: {category}\n\n"
             "⚠️ Your brain is asking for cheap dopamine.\n"
@@ -51,19 +62,115 @@ class SinapsterFlet:
         ]
 
 
+
         self.status_text = None
         self.violation_text = None
         self.streak_text = None
         self.page = None
 
+    def load_nlp_model(self):
+        """Загружает предобученную NLP-модель из папки dopamine_model"""
+        try:
+            self.nlp_model = SetFitModel.from_pretrained("dopamine_model")
+            self.label_encoder = joblib.load("dopamine_model/label_encoder.pkl")
+            print("🧠 NLP модель загружена успешно")
+            return True
+        except Exception as e:
+            print(f"⚠️ Не удалось загрузить NLP модель: {e}")
+            print("   Будет использован fallback на RegEx")
+            self.nlp_model = None
+            self.label_encoder = None
+            return False
+
     def detect_dopamine(self, text: str):
+        """Анализирует текст с помощью NLP, при неудаче использует RegEx"""
         if not text or len(text) < 5:
             return None
+
+        # 1. NLP
+        if self.nlp_model is not None and self.label_encoder is not None:
+            try:
+                pred_idx = self.nlp_model.predict([text])[0]  # число
+                label_str = self.label_encoder.inverse_transform([pred_idx])[0]  # строка
+                # Проверяем, относится ли к дофаминовым категориям (можно по имени или по списку)
+                # Ваш список dopamine_labels оставляем как строки для проверки
+                dopamine_labels = [
+                    "Self-validation", "Unearned praise", "Validation fishing",
+                    "Praise request", "Comparison trap", "Looks validation",
+                    "Age validation", "Unearned genius", "Desperate validation"
+                ]
+                if label_str in dopamine_labels:
+                    return label_str
+            except Exception as e:
+                print(f"NLP error: {e}")
+
+        # 2. Fallback RegEx (оставляем как есть)
         text_lower = text.lower()
         for pattern, category in self.dopamine_patterns:
             if re.search(pattern, text_lower, re.IGNORECASE):
                 return category
         return None
+
+    def start_cdp_monitor(self):
+        """Фоновый мониторинг браузера через Chrome DevTools Protocol"""
+        time.sleep(2)  # даём время UI отрисоваться
+        self.cdp_active = True
+        self.msg_queue.put({"type": "status", "text": "Поиск вкладки ИИ..."})
+
+        try:
+            browser = pychrome.Browser(url="http://127.0.0.1:9222")
+            tab = None
+
+            # Ищем вкладку с ChatGPT, Gemini или Claude
+            for t in browser.list_tab():
+                url = t.get('url', '')
+                if any(ai in url for ai in ["chat.openai.com", "gemini.google.com", "claude.ai"]):
+                    tab = browser.get_tab(t['id'])
+                    print(f"✅ Подключено к {url}")
+                    self.msg_queue.put({"type": "status", "text": f"Подключено к {url.split('/')[2]}"})
+                    break
+
+            if not tab:
+                print("❌ Вкладка с ИИ не найдена")
+                self.msg_queue.put({"type": "status", "text": "Вкладка не найдена"})
+                return
+
+            tab.start()
+            tab.DOM.enable()
+
+            def on_dom_event(event):
+                if event['method'] == "DOM.childNodeInserted":
+                    # Извлекаем текст последнего сообщения пользователя
+                    # Селектор для ChatGPT (для других нужно адаптировать)
+                    js = """
+                    (function() {
+                        const msgs = document.querySelectorAll('[data-message-author-role="user"]');
+                        if (msgs.length > 0) return msgs[msgs.length-1].innerText;
+                        return null;
+                    })();
+                    """
+                    try:
+                        result = tab.Runtime.evaluate(expression=js)
+                        text = result['result'].get('value')
+                        if text and len(text) > 5 and text != self.last_text:
+                            self.last_text = text
+                            category = self.detect_dopamine(text)
+                            if category:
+                                self.show_bro_notification(text, category)
+                                print(f"\n[!] Dopamine trap detected: {category}")
+                                print(f"    Text: {text[:100]}")
+                    except Exception as e:
+                        pass
+
+            tab.on('DOM.childNodeInserted', on_dom_event)
+
+            # Держим поток активным
+            while self.cdp_active and self.running:
+                time.sleep(1)
+
+        except Exception as e:
+            print(f"CDP error: {e}")
+            self.msg_queue.put({"type": "status", "text": f"Ошибка CDP: {str(e)[:30]}"})
 
 
 
@@ -139,7 +246,7 @@ class SinapsterFlet:
                     self.page.run_thread(update)
             time.sleep(1.0)
 
-    def monitor_clipboard(self):
+    #def monitor_clipboard(self):
         """Фоновый мониторинг буфера обмена"""
         time.sleep(1)
         while self.running:
@@ -158,6 +265,19 @@ class SinapsterFlet:
 
 
 
+    def check_queue(self):
+        """Вызывается периодически из главного потока Flet"""
+        try:
+            while True:
+                msg = self.msg_queue.get_nowait()
+                if msg["type"] == "status" and self.status_text:
+                    self.status_text.value = msg["text"]
+                    self.page.update()
+        except queue.Empty:
+            pass
+
+
+
     def main(self, page: ft.Page):
         self.page = page
         page.title = "Sinapster - AI Dopamine Guard"
@@ -168,6 +288,11 @@ class SinapsterFlet:
         page.window.opacity = 0.6
         page.bgcolor = ft.Colors.GREY_900
         page.theme_mode = ft.ThemeMode.DARK
+
+        page.splash = ft.ProgressBar()
+        page.update()
+        self.load_nlp_model()
+        page.splash = None
 
 
 
@@ -223,14 +348,23 @@ class SinapsterFlet:
             )
         )
 
+        page.on_interval = 0.5  # секунд
+        page.on_interval_callback = self.check_queue
+
         self.running = True
-        threading.Thread(target=self.monitor_clipboard, daemon=True).start()
+
+        #threading.Thread(target=self.monitor_clipboard, daemon=True).start()
+        threading.Thread(target=self.start_cdp_monitor, daemon=True).start()
         threading.Thread(target=self.update_streak_display, daemon=True).start()
+
 
         page.on_close = self.on_close
 
+
+
     def on_close(self, e):
         self.running = False
+        self.cdp_active = False  # <-- остановка CDP
 
     def run(self):
         ft.app(target=self.main)
