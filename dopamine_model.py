@@ -95,14 +95,14 @@ for i, cls in enumerate(le.classes_):
     count = sum(1 for l in numeric_labels if l == i)
     print(f"  {cls}: {count}")
 
-# Модель (можно взять меньшую для скорости, например, 'all-MiniLM-L6-v2')
-model = SetFitModel.from_pretrained("sentence-transformers/paraphrase-mpnet-base-v2")
+# Вместо парафрейза - миниатюрная модель (22M параметров)
+model = SetFitModel.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
 
 # Аргументы обучения (добавим эпохи, batch_size)
 args = TrainingArguments(
-    batch_size=16,
-    num_epochs=8,           # больше эпох, т.к. данных стало больше
-    evaluation_strategy="epoch",  # если есть валидация
+    batch_size=32,      # увеличьте (16→32)
+    num_epochs=3,       # 8→3 (SetFit обычно хватает 1-2 эпох!)
+    evaluation_strategy="epoch",
     save_strategy="epoch",
     load_best_model_at_end=True,
 )
@@ -123,6 +123,8 @@ trainer.train()
 
 # ------------------- 4. Сохраняем модель и энкодер меток -------------------
 model.save_pretrained("dopamine_model")
+import os
+print("Содержимое папки dopamine_model:", os.listdir("dopamine_model"))
 import joblib
 joblib.dump(le, "dopamine_model/label_encoder.pkl")
 print("✅ Модель и LabelEncoder сохранены.")
