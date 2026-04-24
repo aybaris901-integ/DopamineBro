@@ -1,2 +1,11 @@
 pyperclip==1.9.0
 plyer==2.1.0
+# Совместимый стек для SetFit
+# Совместимый стек для SetFit
+transformers==4.45.2
+sentence-transformers==3.0.0
+setfit==1.1.0
+datasets==2.21.0
+accelerate
+joblib
+scikit-learn
