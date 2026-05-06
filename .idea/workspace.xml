@@ -1,40 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16834828-09dc-4f9e-a969-ea774751281a" name="Changes" comment="DopamineBro" />
+    <list default="true" id="16834828-09dc-4f9e-a969-ea774751281a" name="Changes" comment="requirements">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/base_logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopamine_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopamine_model.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8,
-  "fromUser": false
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;aybaris901-integ&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/aybaris901-integ/DopamineBro.git&quot;,
+    &quot;accountId&quot;: &quot;25b4124c-89a4-4657-b59b-1da66d6a9d69&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3C4LFXL3zhKSa05kB2aPSr6C5hr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.base_logic.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dopamine_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fix.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.гг.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3bd3a6803838-JavaScript-PY-261.22158.340" />
-        <option value="bundled-python-sdk-b63d5a1f7c97-b61e75351b1f-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.22158.340" />
+        <option value="bundled-python-sdk-024ed6589d45-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.23567.174" />
       </set>
     </attachedChunks>
   </component>
@@ -45,7 +79,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1775639792334</updated>
-      <workItem from="1775639793429" duration="317000" />
+      <workItem from="1775639793429" duration="2120000" />
+      <workItem from="1775659488304" duration="10000" />
+      <workItem from="1775727650573" duration="4410000" />
+      <workItem from="1775733323500" duration="12919000" />
+      <workItem from="1775757891177" duration="3791000" />
+      <workItem from="1775786554676" duration="734000" />
+      <workItem from="1775830199965" duration="10123000" />
+      <workItem from="1776071834336" duration="4906000" />
+      <workItem from="1776170809366" duration="302000" />
+      <workItem from="1776171733160" duration="2434000" />
+      <workItem from="1776174540741" duration="9972000" />
+      <workItem from="1776250594946" duration="3751000" />
+      <workItem from="1776254492438" duration="1391000" />
+      <workItem from="1776255978836" duration="1509000" />
+      <workItem from="1776257775696" duration="502000" />
+      <workItem from="1776273811660" duration="157000" />
+      <workItem from="1776334076298" duration="4664000" />
+      <workItem from="1776407771526" duration="10558000" />
+      <workItem from="1776766325173" duration="10084000" />
+      <workItem from="1776847011149" duration="3007000" />
+      <workItem from="1776852329394" duration="68000" />
+      <workItem from="1776965846863" duration="791000" />
+      <workItem from="1776966655226" duration="433000" />
+      <workItem from="1777024577768" duration="4602000" />
+      <workItem from="1777033296315" duration="1931000" />
+      <workItem from="1777110744536" duration="1851000" />
+      <workItem from="1777123841204" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="README">
       <option name="closed" value="true" />
@@ -63,7 +123,63 @@
       <option name="project" value="LOCAL" />
       <updated>1775640080745</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="DopamineBro">
+      <option name="closed" value="true" />
+      <created>1775640201552</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1775640201552</updated>
+    </task>
+    <task id="LOCAL-00004" summary="DopamineBro">
+      <option name="closed" value="true" />
+      <created>1775842070411</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1775842070411</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: migrate UI to Flet, fix notifications and school-bugs">
+      <option name="closed" value="true" />
+      <created>1776257704314</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1776257704314</updated>
+    </task>
+    <task id="LOCAL-00006" summary="good">
+      <option name="closed" value="true" />
+      <created>1776415842281</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1776415842282</updated>
+    </task>
+    <task id="LOCAL-00007" summary="good">
+      <option name="closed" value="true" />
+      <created>1776415849572</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1776415849572</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ohh hell yeah im totally fix that">
+      <option name="closed" value="true" />
+      <created>1777035105310</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1777035105311</updated>
+    </task>
+    <task id="LOCAL-00009" summary="requirements">
+      <option name="closed" value="true" />
+      <created>1777035251931</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1777035251931</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -72,6 +188,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="README" />
     <MESSAGE value="DopamineBro" />
-    <option name="LAST_COMMIT_MESSAGE" value="DopamineBro" />
+    <MESSAGE value="feat: migrate UI to Flet, fix notifications and school-bugs" />
+    <MESSAGE value="good" />
+    <MESSAGE value="ohh hell yeah im totally fix that" />
+    <MESSAGE value="requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="requirements" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DopamineBro$base_logic.coverage" NAME="base_logic Coverage Results" MODIFIED="1777034856609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DopamineBro$test.coverage" NAME="test Coverage Results" MODIFIED="1776254057995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DopamineBro$.coverage" NAME="гг Coverage Results" MODIFIED="1775760560461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DopamineBro$fix.coverage" NAME="fix Coverage Results" MODIFIED="1777032869353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DopamineBro$dopamine_model.coverage" NAME="dopamine_model Coverage Results" MODIFIED="1776966722991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DopamineBro$main.coverage" NAME="main Coverage Results" MODIFIED="1776178751093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
